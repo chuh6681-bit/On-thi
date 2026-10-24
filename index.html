@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khám phá vẻ đẹp thiên nhiên, văn hóa và ẩm thực Việt Nam.">
+  <title>Việt Nam – Vẻ đẹp ngàn năm</title>
+  <style>
+    :root {
+      --red: #9e2f2b;
+      --red-dark: #70201f;
+      --cream: #fbf6ec;
+      --paper: #fffdf8;
+      --green: #385747;
+      --ink: #302b27;
+      --muted: #716960;
+      --gold: #c49a53;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .topline { height: 5px; background: var(--red); }
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid #e9dfce;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      color: var(--red);
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 16px; }
+    nav a {
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: .9rem;
+      color: var(--green);
+    }
+    nav a:hover { color: var(--red); text-decoration: underline; }
+    .hero {
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 70px 20px;
+      color: white;
+      background:
+        linear-gradient(rgba(25, 35, 30, .45), rgba(25, 35, 30, .58)),
+        url("https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+    .hero-inner { max-width: 850px; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font: 700 .78rem Arial, sans-serif;
+      color: #f3d7a0;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 4.7rem);
+      line-height: 1.1;
+      margin: 18px 0;
+      font-weight: 500;
+    }
+    .hero p { max-width: 650px; margin: 0 auto 26px; font-size: 1.08rem; }
+    .button {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 11px 22px;
+      text-decoration: none;
+      border-radius: 3px;
+      font: 700 .9rem Arial, sans-serif;
+    }
+    .button:hover { background: var(--red-dark); }
+    main { max-width: 1120px; margin: auto; padding: 48px 22px; }
+    section { scroll-margin-top: 20px; margin-bottom: 58px; }
+    .section-heading { text-align: center; margin-bottom: 28px; }
+    .section-heading .eyebrow { color: var(--red); letter-spacing: 3px; }
+    h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); margin: 7px 0; font-weight: 500; }
+    .intro { max-width: 720px; margin: 0 auto; color: var(--muted); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .card {
+      background: var(--paper);
+      border: 1px solid #e9dfce;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(65, 45, 25, .05);
+    }
+    .card img { display: block; width: 100%; height: 190px; object-fit: cover; }
+    .card-content { padding: 18px; }
+    .card h3 { color: var(--red); font-size: 1.35rem; margin: 0 0 7px; }
+    .card p { margin: 0; color: var(--muted); font-size: .98rem; }
+    .culture {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      background: #f0e7d7;
+      padding: 25px;
+      border-radius: 6px;
+    }
+    .culture img { width: 100%; min-height: 250px; height: 100%; object-fit: cover; border-radius: 4px; }
+    .culture h3 { color: var(--green); font-size: 1.5rem; margin-top: 0; }
+    .food-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .food-item {
+      padding: 18px 12px;
+      background: var(--paper);
+      border-top: 3px solid var(--gold);
+      text-align: center;
+    }
+    .food-item strong { display: block; color: var(--red); font-size: 1.15rem; }
+    .quote {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 34px 24px;
+      font-size: 1.3rem;
+      font-style: italic;
+      border-radius: 6px;
+    }
+    .quote small { display: block; margin-top: 10px; color: #e6d5b6; font: .8rem Arial, sans-serif; }
+    footer {
+      background: #292f2a;
+      color: #f8f0e3;
+      padding: 28px 20px;
+      text-align: center;
+      font: .9rem Arial, sans-serif;
+    }
+    footer p { margin: 5px 0; }
+    .back-top { color: #f3d7a0; }
+    @media (max-width: 760px) {
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; gap: 10px 15px; }
+      .cards { grid-template-columns: 1fr; }
+      .card img { height: 220px; }
+      .culture { grid-template-columns: 1fr; padding: 18px; }
+      .culture img { min-height: 210px; }
+      .food-list { grid-template-columns: 1fr; }
+      .hero { min-height: 390px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header id="dau-trang">
+    <a class="brand" href="#dau-trang">VIỆT NAM ✦ DI SẢN</a>
+    <nav aria-label="Điều hướng chính">
+      <a href="#thien-nhien">Thiên nhiên</a>
+      <a href="#van-hoa">Văn hóa</a>
+      <a href="#am-thuc">Ẩm thực</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="Giới thiệu Việt Nam">
+    <div class="hero-inner">
+      <div class="eyebrow">Đất nước · Con người · Di sản</div>
+      <h1>VIỆT NAM<br>VẺ ĐẸP NGÀN NĂM</h1>
+      <p>Từ những miền non nước hữu tình đến bản sắc văn hóa được gìn giữ qua bao thế hệ, Việt Nam luôn có những điều đáng để khám phá và tự hào.</p>
+      <a class="button" href="#thien-nhien">BẮT ĐẦU KHÁM PHÁ</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="thien-nhien">
+      <div class="section-heading">
+        <div class="eyebrow">01 · Non nước hữu tình</div>
+        <h2>Những miền đất đáng nhớ</h2>
+        <p class="intro">Mỗi vùng đất mang một vẻ đẹp riêng, góp phần tạo nên bức tranh thiên nhiên đa dạng của Việt Nam.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=80" alt="Phong cảnh núi đá và mặt nước ở Việt Nam">
+          <div class="card-content">
+            <h3>Vịnh Hạ Long</h3>
+            <p>Những đảo đá vôi kỳ vĩ nổi lên giữa làn nước xanh, tạo nên cảnh quan đặc sắc của vùng biển Đông Bắc.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=80" alt="Phố cổ với những ngôi nhà vàng và đèn lồng">
+          <div class="card-content">
+            <h3>Phố cổ Hội An</h3>
+            <p>Những mái nhà cổ, con phố nhỏ và ánh đèn lồng tạo nên không gian bình yên, đậm dấu ấn lịch sử.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="Núi non và thung lũng xanh">
+          <div class="card-content">
+            <h3>Tràng An</h3>
+            <p>Núi đá, sông nước và những hang động tự nhiên hòa quyện thành một miền di sản giàu sức cuốn hút.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="van-hoa">
+      <div class="section-heading">
+        <div class="eyebrow">02 · Hồn Việt</div>
+        <h2>Nét đẹp văn hóa truyền thống</h2>
+        <p class="intro">Văn hóa Việt Nam được bồi đắp qua lịch sử, thể hiện trong trang phục, phong tục và nếp sống cộng đồng.</p>
+      </div>
+      <div class="culture">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=80" alt="Không gian văn hóa truyền thống Việt Nam">
+        <div>
+          <h3>Giữ gìn bản sắc, nối dài truyền thống</h3>
+          <p><strong>Áo dài:</strong> Trang phục mang vẻ đẹp duyên dáng, thường xuất hiện trong những dịp lễ, sự kiện và hoạt động văn hóa.</p>
+          <p><strong>Tết cổ truyền:</strong> Dịp sum họp gia đình, tưởng nhớ tổ tiên và gửi trao những lời chúc tốt đẹp cho năm mới.</p>
+          <p><strong>Tinh thần cộng đồng:</strong> Lòng hiếu khách, sự gắn bó và truyền thống tương thân tương ái là những giá trị đáng quý của người Việt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="am-thuc">
+      <div class="section-heading">
+        <div class="eyebrow">03 · Hương vị quê nhà</div>
+        <h2>Ẩm thực Việt Nam</h2>
+        <p class="intro">Ẩm thực Việt nổi bật bởi nguyên liệu phong phú, rau thơm tươi và sự hài hòa giữa các hương vị.</p>
+      </div>
+      <div class="food-list">
+        <div class="food-item"><strong>Phở</strong>Món ăn quen thuộc với nước dùng thơm, bánh phở và rau gia vị.</div>
+        <div class="food-item"><strong>Bánh mì</strong>Lớp vỏ giòn kết hợp cùng nhiều loại nhân và rau ăn kèm.</div>
+        <div class="food-item"><strong>Gỏi cuốn</strong>Món cuốn thanh mát với rau, bún và các nguyên liệu đa dạng.</div>
+      </div>
+    </section>
+
+    <section class="quote">
+      “Vẻ đẹp của Việt Nam nằm trong thiên nhiên tươi đẹp, văn hóa lâu đời và con người giàu tình nghĩa.”
+      <small>VIỆT NAM — NIỀM TỰ HÀO TRONG MỖI CHÚNG TA</small>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>VIỆT NAM – VẺ ĐẸP NGÀN NĂM</strong></p>
+    <p>Sản phẩm thực hành môn Tin học 12 · Chủ đề: HTML và cấu trúc trang web</p>
+    <p>Người thực hiện: [Điền họ tên] · Lớp: [Điền lớp]</p>
+    <p><a class="back-top" href="#dau-trang">Quay về đầu trang ↑</a></p>
+  </footer>
+</body>
+</html>
